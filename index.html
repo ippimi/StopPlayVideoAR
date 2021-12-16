@@ -1,30 +1,24 @@
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-
+<script src="script.js"></script>
 
 <style>
-.button {
+.button{
+
   text-align: center;
   display: center;
- 
 
 }
- .div1 {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
- }
- 
 </style>
-<div class="div1" style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
 <button class="button" id="btn1">Play Video</button>
 <button class="button" id="btn2">Stop Video</button>
 </div>
 
-<body style='margin:0px; overflow: hidden;'></body>
+<body style='margin:0px; overflow: hidden;'>
   <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
-  
+  >
     
      <a-assets>
 
@@ -33,22 +27,8 @@
       </video>
     </a-assets>
       <a-marker preset="hiro">
-       <a-video position="0 0 0" scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true; opacity: 0.7; src:#vid'></a-video>
-        <script>
-        
-        document.getElementById("btn1").addEventListener("click", (e) => {
+       <a-plane position="1 2 0" scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true; opacity: 0.7; src:#vid'></a-plane>
 
-   var test = document.querySelector('#vid').play();
-
-})
-
-document.getElementById("btn2").addEventListener("click", (e) => {
-
-   var test = document.querySelector('#vid').pause();
-
-})
-          
-        </script>
       </a-marker>
 
     <a-entity camera></a-entity>
